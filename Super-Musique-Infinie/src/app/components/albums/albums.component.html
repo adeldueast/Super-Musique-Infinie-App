@@ -1,0 +1,48 @@
+<div class="mt-10 container mx-auto flex justify-center items-center flex-wrap gap-x-10 gap-y-8 p-10 ">
+
+  <div *ngFor="let album of albums" class="">
+    <a onclick="return false" [routerLink]="['/',artist?.name,album.uid,'tracks']" href="#" class="
+      flex flex-col
+      bg-white
+      items-center
+      rounded-lg
+      border
+      shadow-md
+      md:flex-row
+      md:max-w-lg
+      hover:bg-gray-100
+      w-auto
+      dark:border-gray-700
+      dark:bg-gray-800
+      dark:hover:bg-gray-700
+    ">
+      <img class="
+        object-cover
+        w-full
+
+        h-96
+        rounded-t-lg
+        md:h-auto
+        md:w-48
+        md:rounded-none md:rounded-l-lg
+      " src="{{ album.image }}" alt="" />
+      <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="
+          mb-2
+          text-2xl
+          font-bold
+          tracking-tight
+          text-gray-900
+          dark:text-white
+        ">
+          {{album.name}}
+        </h5>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis voluptate temporibus facere culpa!
+        </p>
+        <p class="font-poppins">{{album.total_tracks}} {{'albums-card.tracks' | translate}}</p>
+      </div>
+    </a>
+  </div>
+
+</div>

@@ -1,0 +1,137 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-dark-toggle {
+    @apply text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none  rounded-lg text-sm p-2.5
+  /* focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 */;
+  }
+
+  .btn-login-logout {
+    @apply text-white bg-slate-600  font-medium rounded-lg text-sm  pl-1 pr-4 py-2 text-center inline-flex items-center;
+  }
+
+  .searchbar {
+    @apply block p-[0.535rem] pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+  }
+
+  .avatars {
+    display: flex;
+    list-style-type: none;
+
+    padding: 0px;
+    flex-direction: row;
+  }
+  .avatars__item {
+    background-color: #596376;
+    border: 2px solid #1f2532;
+    border-radius: 100%;
+    color: #ffffff;
+    display: block;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 100;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    transition: margin 0.1s ease-in-out;
+    overflow: hidden;
+    margin-left: -10px;
+  }
+  .avatars__item:first-child {
+    z-index: 5;
+  }
+  .avatars__item:nth-child(2) {
+    z-index: 4;
+  }
+  .avatars__item:nth-child(3) {
+    z-index: 3;
+  }
+  .avatars__item:nth-child(4) {
+    z-index: 2;
+  }
+  .avatars__item:nth-child(5) {
+    z-index: 1;
+  }
+  .avatars__item:last-child {
+    z-index: 0;
+  }
+
+  .avatars img {
+    width: 100%;
+  }
+
+  .avatars:hover > * {
+    margin-right: 10px;
+  }
+
+  .icon {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 19px;
+    height: 19px;
+  }
+  @keyframes bounce {
+    10% {
+      transform: scaleY(0.3); /* start by scaling to 30% */
+    }
+
+    30% {
+      transform: scaleY(1); /* scale up to 100% */
+    }
+
+    60% {
+      transform: scaleY(0.5); /* scale down to 50% */
+    }
+
+    80% {
+      transform: scaleY(0.75); /* scale up to 75% */
+    }
+
+    100% {
+      transform: scaleY(0.6); /* scale down to 60% */
+    }
+  }
+
+  .icon > span {
+    width: 3px;
+    height: 100%;
+    background-color: orange;
+    border-radius: 3px;
+    transform-origin: bottom;
+    animation: bounce 2.2s ease infinite alternate;
+    content: "";
+  }
+  .icon > span:nth-child(2) {
+    animation-delay: -2.2s; /* Start at the end of animation */
+  }
+
+  .icon > span:nth-child(3) {
+    animation-delay: -3.7s; /* Start mid-way of return of animation */
+  }
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+}
+
+@layer utilities {
+  .center {
+    min-height: calc(100vh - (74px));
+  }
+
+  .sm-center {
+    min-height: calc(100vh - (160.5px));
+  }
+}

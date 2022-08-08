@@ -1,0 +1,12 @@
+<div class="container mx-auto flex flex-col  justify-start gap-6 mt-10 p-4">
+
+
+  <div *ngFor="let track of tracks; let i=index">
+    <app-audio-player (toggleAudioPreview)="toggleAudioPreview($event)" (toggleYoutubeEmitter)="toggleYoutube($event)" [track]="track" [index]="i"
+     ></app-audio-player>
+  </div>
+
+
+</div>
+
+<!-- https://p.scdn.co/mp3-preview/78fc4a9a0297ade66d724b0c4e8f305481a07e13?cid=cdb8801100174eb89ecb4cf3aa808ba2 -->

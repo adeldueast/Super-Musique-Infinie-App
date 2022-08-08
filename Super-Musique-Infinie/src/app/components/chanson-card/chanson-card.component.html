@@ -1,0 +1,53 @@
+<div
+  class="bg-white dark:bg-gray-800 flex flex-col gap-5  rounded-lg border border-gray-200 shadow-lg dark:border-gray-700 p-4  font-poppins">
+
+  <div class="flex items-center justify-between">
+    <div class="flex flex-col  items-start gap-1">
+      <p>{{ track?.name }}</p>
+      <div class="flex flex-row items-center  gap-2">
+        <!-- <i class="fa-solid fa-play text-blue-400"></i> -->
+        <i class="fa-brands fa-spotify  fa-lg text-green-400 cursor-pointer hover:scale-110"></i>
+        <i class="fa-brands fa-youtube fa-lg text-red-600 cursor-pointer relative  hover:scale-150 scale-125"
+          (click)="toggleYoutube()"></i>
+
+
+        <button
+          class="w-6 h-6 rounded-full bg-black  focus:outline-none hover:scale-110 flex items-center justify-center "
+          (click)="togglePreviewAudio()">
+          <i class="fa fa-2xs  relative text-white" [ngClass]="!track?.isAudioPlaying ? 'fa-play' : 'fa-pause'"
+            id="play-btn"></i>
+        </button>
+        <div class="icon" [ngClass]="!track?.isAudioPlaying ? 'hidden' : 'flex'">
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="avatars">
+      <div *ngFor="let artist of track?.featured_artists" class="avatars__item cursor-pointer">
+        <img class="avatar" [src]="artist?.image" alt="{{artist?.name}}">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="w-full  h-[250px] sm:h-[350px] lg:h-[500px] xl:h-[600px]"
+    [ngClass]="!track?.isYoutubePlaying? 'hidden' : 'flex'">
+
+    <iframe class="w-full h-full" [src]="youtubeVideoId|trust" title="Youtube video player" frameborder="0"
+      allowfullscreen></iframe>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,15 @@
+{
+  "home": {
+    "header": "Gardez une trace de votre artiste préféré et rencontrez-le lors de son concert."
+  },
+  "navbar": {
+    "search": "Rechercher un artiste"
+  },
+  "artist-card": {
+    "albums": "Albums",
+    "concerts": "Concerts"
+  },
+  "albums-card": {
+    "tracks": "chansons"
+  }
+}

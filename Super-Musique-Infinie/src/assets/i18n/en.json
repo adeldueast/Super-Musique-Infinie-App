@@ -1,0 +1,15 @@
+{
+  "home": {
+    "header": "Keep track of your favorite artist & meet up with them at their concert."
+  },
+  "navbar": {
+    "search": "Search an artist"
+  },
+  "artist-card": {
+    "albums": "Albums",
+    "concerts": "Concerts"
+  },
+  "albums-card": {
+    "tracks": "tracks"
+  }
+}

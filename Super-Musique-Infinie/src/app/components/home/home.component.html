@@ -1,0 +1,24 @@
+<!-- LOGIN TEMPLATE  -->
+<div *ngIf="spotify.token else logout"
+  class="container  mx-auto flex flex-col gap-8 justify-center  flex-wrap items-center sm:flex-row  sm:p-0 p-4  mt-10 ">
+  <div ngcl *ngFor="let artist  of  artists" class="">
+    <app-artist-card [artist]="artist"></app-artist-card>
+  </div>
+</div>
+
+
+<!-- LOGOUT TEMPLATE -->
+<ng-template #logout class="">
+  <div
+    class="sm:grid sm:grid-cols-12 gap-9 container mx-auto center flex flex-col-reverse justify-center items-center text-left  sm:p-0 p-6  ">
+
+    <div class="col-start-1 col-end-8 row-start-1">
+      <img src="../assets/images/Spotify-logo.png" alt="">
+    </div>
+    <div class="col-start-7 col-end-13 row-start-1">
+      <h1 class="text-6xl font-poppins text-black font-semibold dark:text-slate-200">
+        {{'home.header' | translate}}
+      </h1>
+    </div>
+  </div>
+</ng-template>
